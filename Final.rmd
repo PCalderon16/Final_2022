@@ -70,6 +70,15 @@ The most important info: among males who got covid19, 67.78% of them took the pl
 
 ### Inferential Results
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+Observed counts table shows the actual number of males who got covid and those who didn't. Also, p-value is small meaning there is a statistical difference in the effect of the placebo and the vaccine among males in preventing covid infection. Males who took the placebo are about 2 times more likely to contract covid than those who took the vaccine based on the odds ratio value. 
+
 ### Efficacy of Vaccine for Males
 
 
