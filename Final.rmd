@@ -85,27 +85,12 @@ Observed counts table shows the actual number of males who got covid and those w
 
 ```{r}
 EfficacyMales <- ((2.092161/(1+2.092161)*100) )
-EfficacyMales
-```
-Estimated efficacy of the vaccine among males. 
-
-```{r}
 malefisherlow <- malefisher$conf.int[1]
-malefisherlow
 malefisherhigh <- malefisher$conf.int[2]
-malefisherhigh
-```
-
-```{r}
 EfficacyMalesLow <- (malefisherlow/(1+malefisherlow)*100)
-EfficacyMalesLow 
-```
-
-```{r}
 EfficacyMalesHigh <- (malefisherhigh/(1+malefisherhigh)*100)
-EfficacyMalesHigh
 ```
-The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. 
+The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. 
 
 ## Females
 
