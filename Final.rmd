@@ -65,6 +65,7 @@ table1 <- xtabs(~infected + treatment, data=Males)
 rowPerc(table1)
 colPerc(table1)
 ```
+The most important info: among males who got covid19, 67.78% of them took the placebo and only 32.22% took the vaccine. Majority of the males who got covid took placebo, therfore the vaccine seems to be working among males. 
 
 
 ### Inferential Results
