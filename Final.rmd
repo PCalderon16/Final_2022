@@ -54,6 +54,8 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+The bar plots above are graphical descriptive summaries of the effect of the two treatments (covid 19 vaccine and placebo) on males. At first glance, the vaccine appears to be working among males as the two plots show that more males who took the placebo contracted the disease. 
+
 
 
 #### Numerical Descriptive Results
