@@ -60,6 +60,13 @@ The bar plots above are graphical descriptive summaries of the effect of the two
 
 #### Numerical Descriptive Results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=Males)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
 ### Inferential Results
 
 ### Efficacy of Vaccine for Males
