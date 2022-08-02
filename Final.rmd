@@ -36,7 +36,7 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 # Method
 
-The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. Part of each sub group has taken the vaccine while the remaining part has taken a placebo, so the effects of these two types of treatments would be analyzed. The vaccine would be considered efficacious if it has a statistically significant effect on people who have taken it. In other words, a significant number of people in a sub group did not get covid-19 as a result of getting vaccinates. Lastly, certain recommendations will be made regarding whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
+The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. Part of each sub group has taken the vaccine while the remaining part has taken a placebo, so the effects of these two types of treatments would be analyzed. The vaccine would be considered efficacious if it has a statistically significant effect on people who have taken it. In other words, the calculated efficacy value for the vaccine must be greater than 50%. Lastly, certain recommendations will be made regarding whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
 
 
 ## Males
@@ -108,7 +108,10 @@ malefisherhigh <- malefisher$conf.int[2]
 EfficacyMalesLow <- (malefisherlow/(1+malefisherlow)*100)
 EfficacyMalesHigh <- (malefisherhigh/(1+malefisherhigh)*100)
 ```
-The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. 
+
+To be able to conclude that the vaccine is indeed efficacious among males, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.
+
+The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. Therefore, these results conclude that the vaccine is efficacious among males, so it's recommended that members of this population take the vaccine to prevent contracting covid-19. 
 
 ## Females
 
