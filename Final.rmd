@@ -32,7 +32,7 @@ DrugUser <- filter(FinalData, DrugUser == "yes")
 
 # Introduction
 
-A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
+A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of sub populations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
 # Method
 
@@ -77,7 +77,9 @@ table1 <- xtabs(~infected + treatment, data=Males)
 rowPerc(table1)
 colPerc(table1)
 ```
-The most important info: among males who got covid19, 67.78% of them took the placebo and only 32.22% took the vaccine. Majority of the males who got covid took placebo, therfore the vaccine seems to be working among males. 
+The tables above show the actual values of the percentages of males who did and did not contract covid-19 based on the treatment they received (placebo and vaccine). 
+
+The most important piece of information from these two tables is seen from on the first table. According to it, among males who contracted covid-19, 68% of them took the placebo and only 32% took the vaccine. This reinforces the previous observation that majority of males who got covid-19 took placebo, and therefore, the vaccine seems to be working among males in preventing the contraction of covid-19. 
 
 
 ### Inferential Results
