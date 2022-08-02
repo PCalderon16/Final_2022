@@ -36,7 +36,7 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 # Method
 
-The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. The efficacy of the covid-19 vaccine would be analyzed in each sub group, and certain recommendations would be made whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
+The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. Part of each sub group has taken the vaccine while the remaining part has taken a placebo, so the effects of these two types of treatments would be analyzed. The vaccine would be considered efficacious if it has a statistically significant effect on people who have taken it. In other words, a significant number of people in a sub group did not get covid-19 as a result of getting vaccinates. Lastly, certain recommendations will be made regarding whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
 
 
 ## Males
