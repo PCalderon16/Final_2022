@@ -162,15 +162,26 @@ The most important piece of information from these two tables is seen from on th
 ```{r}
 chisq.test(table2)
 chisqtestGC(table2)
-malefisher <- fisher.test(table2)
-malefisher
+femalefisher <- fisher.test(table2)
+femalefisher
 ```
 
 
 
-### Efficacy of Vaccine for Males
+### Efficacy of Vaccine for Females
+  
+```{r}
 
+EfficacyFemales <- ((femalefisher$estimate/(1+femalefisher$estimate)*100) )
+femalefisherlow <- femalefisher$conf.int[1]
+femalefisherhigh <- femalefisher$conf.int[2]
+EfficacyFemalesLow <- (femalefisherlow/(1+femalefisherlow)*100)
+EfficacyFemalesHigh <- (femalefisherhigh/(1+femalefisherhigh)*100)
+```
 
+To be able to conclude that the vaccine is indeed efficacious among females, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.  
+  
+The estimated efficacy of the vaccine among females is `r EfficacyFemales`%. The 95% confidence interval of the vaccine efficacy among females is from `r EfficacyFemalesLow` to `r EfficacyFemalesHigh`. Therefore, these results conclude that the vaccine is efficacious among females, so it's recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 ## LGBTQ
 
