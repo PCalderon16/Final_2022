@@ -219,6 +219,12 @@ Based on these two plots, the vaccine appears to be ineffective among members of
 
 #### Numerical Descriptive Results
 
+```{r}
+table3 <- xtabs(~infected + treatment, data=LGBTQ)
+rowPerc(table3)
+colPerc(table3)
+```
+
 ### Inferential Results
 
 ### Efficacy of Vaccine for Males
