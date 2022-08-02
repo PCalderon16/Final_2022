@@ -60,10 +60,16 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-The bar plots above are graphical descriptive summaries of the effect of the two treatments (covid 19 vaccine and placebo) on males. At first glance, the vaccine appears to be working among males as the two plots show that more males who took the placebo contracted the disease. 
+The two plots above show the graphical summary of the relationship between the type of treatment (placebo and vaccine) and the contraction of covid-19 specifically among males.     
 
+The first bar plot shows the estimated counts of males who did and did not get covid and whether they took the vaccine or the placebo. At first glance, it can be seen that the majority of the male population did not contract covid-19 regardless of the type of treatment they received. However, looking closely, the bar representing males who took the placebo and contracted covid-19 is larger compared to the bar representing males who took the vaccine and contracted covid-19. This may suggest that the vaccine is working among males given that there is less counts of infection among males who took the vaccine.   
 
+Meanwhile, the second bar plot shows the estimated percentages of covid-19 infection among males who took the two types of treatment. Among males who contracted covid-19, about 65% of them took the placebo, and 35% got the vaccine. This means that infection among males is largely made up males who took the placebo. Furthermore, among males who did not contract the virus, there apears to be a 50:50 ratio of males who took the placebo and got the vaccine.   
 
+Based on these two plots, the vaccine appears to be working among males as they show that more males who took the placebo contracted covid-19 than males who got the vaccine.   
+  
+  
+  
 #### Numerical Descriptive Results
 
 ```{r}
