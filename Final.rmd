@@ -288,6 +288,13 @@ colPerc(table4)
 ```
 
 ### Inferential Results
+  
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+drugfisher <- fisher.test(table4)
+drugfisher
+```
 
 ### Efficacy of Vaccine for Males
 
