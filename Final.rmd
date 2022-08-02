@@ -109,15 +109,36 @@ EfficacyMalesLow <- (malefisherlow/(1+malefisherlow)*100)
 EfficacyMalesHigh <- (malefisherhigh/(1+malefisherhigh)*100)
 ```
 
-To be able to conclude that the vaccine is indeed efficacious among males, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.
-
-The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. Therefore, these results conclude that the vaccine is efficacious among males, so it's recommended that members of this population take the vaccine to prevent contracting covid-19. 
+To be able to conclude that the vaccine is indeed efficacious among males, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.  
+  
+The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. Therefore, these results conclude that the vaccine is efficacious among males, so it's recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 ## Females
 
 ### Descriptive Results
-
+  
 #### Graphical Descriptive Results
+
+```{r}
+dd3 <- Females %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
+
+
+
+
 
 #### Numerical Descriptive Results
 
