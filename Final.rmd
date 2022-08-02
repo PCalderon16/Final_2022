@@ -190,6 +190,23 @@ The estimated efficacy of the vaccine among females is `r EfficacyFemales`%. The
 ## LGBTQ
 
 ### Descriptive Results
+  
+```{r}
+dd4 <- LGBTQ %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd4,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd4,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
 
 #### Graphical Descriptive Results
 
