@@ -158,6 +158,15 @@ The most important piece of information from these two tables is seen from on th
   
   
 ### Inferential Results
+  
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+malefisher <- fisher.test(table2)
+malefisher
+```
+
+
 
 ### Efficacy of Vaccine for Males
 
