@@ -240,8 +240,22 @@ lgbtqfisher
 ```
 
 
-### Efficacy of Vaccine for Males
 
+
+### Efficacy of Vaccine for LGBTQ
+  
+```{r}
+
+EfficacyLGBTQ <- ((lgbtqfisher$estimate/(1+lgbtqfisher$estimate)*100) )
+lgbtqfisherlow <- lgbtqfisher$conf.int[1]
+lgbtqfisherhigh <- lgbtqfisher$conf.int[2]
+EfficacyLGBTQLow <- (lgbtqfisherlow/(1+lgbtqfisherlow)*100)
+EfficacyLGBTQHigh <- (lgbtqfisherhigh/(1+lgbtqfisherhigh)*100)
+```
+  
+To be able to conclude that the vaccine is efficacious among LGBTQ members, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.  
+  
+The estimated efficacy of the vaccine among LGBTQ members is `r EfficacyLGBTQ`%. The 95% confidence interval of the vaccine efficacy among LGBTQ members is from `r EfficacyLGBTQLow` to `r EfficacyLGBTQHigh`. Therefore, these results conclude that the vaccine is inefficacious among people who identify as LGBTQ, so it is not recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 
 ## Druggies
