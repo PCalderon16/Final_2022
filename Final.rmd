@@ -95,7 +95,7 @@ To further test whether the vaccine is efficacious among males, chi-squares test
   
 Before going into the results of this test, notice that the observed counts table shows the actual number of males who did and did not get covid. There are 244 males who took the placebo and got covid-19 while there are only 116 males who got the vaccine and got covid-19.   
   
-The chi-squared test provided a small p-value of 0 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among males, or that there is a statistical difference in the effect of the placebo and the vaccine among males in preventing covid-19 infection.  Moreover, according to the odds ratio provided in the fisher's exact test, males who took the placebo are 2 times more likely to contract covid-19 than those who took the vaccine.  
+The chi-squared test provided a small p-value of 0 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among males, or that there is a statistical difference in the effect of the placebo and the vaccine among males in preventing covid-19 infection.  Moreover, according to the odds ratio provided in the fisher's exact test, males who took the placebo are `r malefisher$estimate` times more likely to contract covid-19 than those who took the vaccine.  
   
   
 ### Efficacy of Vaccine for Males
@@ -165,8 +165,12 @@ chisqtestGC(table2)
 femalefisher <- fisher.test(table2)
 femalefisher
 ```
+  
+To further test whether the vaccine is efficacious among females, chi-squares test is conducted along with fisher’s exact test.  
+  
+Before going into the results of this test, notice that the observed counts table shows the actual number of females who did and did not get covid. There are 212 females who took the placebo and got covid-19 while there are 148 females who got the vaccine and got covid-19.
 
-
+The chi-squared test provided a small p-value of 0.001 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among females, or that there is a statistical difference in the effect of the placebo and the vaccine among females in preventing covid-19 infection. Moreover, according to the odds ratio provided in the fisher’s exact test, females who took the placebo are `r femalefisher$estimate` times more likely to contract covid-19 than those who took the vaccine.
 
 ### Efficacy of Vaccine for Females
   
