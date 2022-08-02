@@ -34,6 +34,11 @@ DrugUser <- filter(FinalData, DrugUser == "yes")
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
+# Method
+
+The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. The efficacy of the covid-19 vaccine would be analyzed in each sub group, and certain recommendations would be made whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
+
+
 ## Males
 
 ### Descriptive Results
