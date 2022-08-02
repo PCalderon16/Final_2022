@@ -191,6 +191,8 @@ The estimated efficacy of the vaccine among females is `r EfficacyFemales`%. The
 
 ### Descriptive Results
   
+#### Graphical Descriptive Results
+
 ```{r}
 dd4 <- LGBTQ %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
@@ -214,7 +216,6 @@ Meanwhile, the second bar plot shows the estimated percentages of covid-19 infec
 
 Based on these two plots, the vaccine appears to be ineffective among members of the LBGTQ community as they show that more LGBTQ members who took the vaccine contracted covid-19 than those who got the placebo.
 
-#### Graphical Descriptive Results
 
 #### Numerical Descriptive Results
 
