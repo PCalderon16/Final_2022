@@ -151,9 +151,12 @@ table2 <- xtabs(~infected + treatment, data=Females)
 rowPerc(table2)
 colPerc(table2)
 ```
+  
+The tables above show the actual values of the percentages of females who did and did not contract covid-19 based on the treatment they received (placebo and vaccine).
 
-
-
+The most important piece of information from these two tables is seen from on the first table. According to it, among females who contracted covid-19, 59% of them took the placebo and only 41% took the vaccine. This reinforces the previous observation that majority of females who got covid-19 took placebo, and therefore, the vaccine seems to be working among females in preventing the contraction of covid-19.
+  
+  
 ### Inferential Results
 
 ### Efficacy of Vaccine for Males
