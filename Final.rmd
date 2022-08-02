@@ -38,7 +38,8 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. Part of each sub group has taken the vaccine while the remaining part has taken a placebo, so the effects of these two types of treatments would be analyzed. The vaccine would be considered efficacious if it has a statistically significant effect on people who have taken it. In other words, the calculated efficacy value for the vaccine must be greater than 50%. Lastly, certain recommendations will be made regarding whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
 
-
+# Analysis of Results 
+ 
 ## Males
 
 ### Descriptive Results
@@ -239,9 +240,14 @@ lgbtqfisher <- fisher.test(table3)
 lgbtqfisher
 ```
 
+To further test whether the vaccine is efficacious among LGBTQ members, chi-squares test is conducted along with fisher’s exact test.
 
+Before going into the results of this test, notice that the observed counts table shows the actual number of people who identify as LGBTQ who did and did not get covid. There are only 8 LGBTQ who took the placebo and got covid-19 while there are 58 LGBTQ who got the vaccine and got covid-19.
 
-
+The chi-squared test provided a small p-value of 0.001 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among LGBTQ people, or that there is a statistical difference in the effect of the placebo and the vaccine among LGBTQ people in preventing covid-19 infection. More importantly, according to the odds ratio provided in the fisher's exact test, people who identify as LGBTQ and took the vaccine are more likely to contract covid-19 than those who took the placebo. Specifically, there is only `r lgbtqfisher$estimate` LGBTQ member who got the placebo that tests positive for covid-19 for every 1 LGBTQ member who got the vaccine that tests positive for the virus. Therefore, the vaccine does not appear to be working for people who identify as LGBTQ.   
+  
+  
+  
 ### Efficacy of Vaccine for LGBTQ
   
 ```{r}
