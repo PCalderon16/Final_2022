@@ -297,7 +297,19 @@ drugfisher
 ```
 
 ### Efficacy of Vaccine for Males
+  
+```{r}
 
+EfficacyDrug <- ((drugfisher$estimate/(1+drugfisher$estimate)*100) )
+drugfisherlow <- drugfisher$conf.int[1]
+drugfisherhigh <- drugfisher$conf.int[2]
+EfficacyDrugLow <- (drugfisherlow/(1+drugfisherlow)*100)
+EfficacyDrugHigh <- (drugfisherhigh/(1+drugfisherhigh)*100)
+```
+  
+To be able to conclude that the vaccine is efficacious among drug users, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.  
+  
+The estimated efficacy of the vaccine among drug users is `r EfficacyDrug`%. The 95% confidence interval of the vaccine efficacy among drug users is from `r EfficacyDrugLow` to `r EfficacyDrugHigh`. Therefore, these results conclude that the vaccine is inefficacious among drug users, so it is not recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 ## Discussion and Conclusion
 
