@@ -261,6 +261,8 @@ The estimated efficacy of the vaccine among LGBTQ members is `r EfficacyLGBTQ`%.
 ## Drug Users
 
 ### Descriptive Results
+
+#### Graphical Descriptive Results
   
 ```{r}
 dd5 <- DrugUser %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
@@ -277,9 +279,13 @@ basicCC <- ggplot(dd5,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-#### Graphical Descriptive Results
-
 #### Numerical Descriptive Results
+
+```{r}
+table4 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table4)
+colPerc(table4)
+```
 
 ### Inferential Results
 
