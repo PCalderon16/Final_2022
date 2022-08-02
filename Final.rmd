@@ -296,7 +296,7 @@ drugfisher <- fisher.test(table4)
 drugfisher
 ```
 
-### Efficacy of Vaccine for Males
+### Efficacy of Vaccine for Drug Users
   
 ```{r}
 
