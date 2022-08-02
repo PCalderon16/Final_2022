@@ -258,9 +258,24 @@ To be able to conclude that the vaccine is efficacious among LGBTQ members, the 
 The estimated efficacy of the vaccine among LGBTQ members is `r EfficacyLGBTQ`%. The 95% confidence interval of the vaccine efficacy among LGBTQ members is from `r EfficacyLGBTQLow` to `r EfficacyLGBTQHigh`. Therefore, these results conclude that the vaccine is inefficacious among people who identify as LGBTQ, so it is not recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 
-## Druggies
+## Drug Users
 
 ### Descriptive Results
+  
+```{r}
+dd5 <- DrugUser %>% group_by(infected, treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd5,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd5,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
 
 #### Graphical Descriptive Results
 
