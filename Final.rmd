@@ -18,14 +18,7 @@ FinalDat <-read.csv(file="final_Data.csv",header=TRUE)
 FinalData <- FinalDat  %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
-options(digits = 1)
-```
-
-```{r}
-Males <- filter(FinalData, sex=="M")
-Females <- filter(FinalData, sex == "F")
-LGBTQ <- filter(FinalData, LGBTQ == "gay")
-DrugUser <- filter(FinalData, DrugUser == "yes")
+options(digits = 2)
 ```
 
 
@@ -37,6 +30,13 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 # Method
 
 The original data set, FinalDat, contains all character variables that are needed to be converted into factor variables in order to analyze the results of the study. This new data set is named "FinalData" which will then be divided into the four subgroups mentioned in the introduction. These subgroups are males, females, people who identify as LGBTQ, and drug users. Part of each sub group has taken the vaccine while the remaining part has taken a placebo, so the effects of these two types of treatments would be analyzed. The vaccine would be considered efficacious if it has a statistically significant effect on people who have taken it. In other words, the calculated efficacy value for the vaccine must be greater than 50%. Lastly, certain recommendations will be made regarding whether each groups should consider taking or not taking the covid-19 vaccine based on the analyzed results. 
+
+```{r}
+Males <- filter(FinalData, sex=="M")
+Females <- filter(FinalData, sex == "F")
+LGBTQ <- filter(FinalData, LGBTQ == "gay")
+DrugUser <- filter(FinalData, DrugUser == "yes")
+```
 
 # Analysis of Results 
  
@@ -112,7 +112,7 @@ EfficacyMalesHigh <- (malefisherhigh/(1+malefisherhigh)*100)
 
 To be able to conclude that the vaccine is indeed efficacious among males, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.  
   
-The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow` to `r EfficacyMalesHigh`. Therefore, these results conclude that the vaccine is efficacious among males, so it's recommended that members of this population take the vaccine to prevent contracting covid-19.   
+The estimated efficacy of the vaccine among males is `r EfficacyMales`%. The 95% confidence interval of the vaccine efficacy among males is from `r EfficacyMalesLow`% to `r EfficacyMalesHigh`%. Therefore, these results conclude that the vaccine is efficacious among males, so it's recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 ## Females
 
@@ -186,7 +186,7 @@ EfficacyFemalesHigh <- (femalefisherhigh/(1+femalefisherhigh)*100)
 
 To be able to conclude that the vaccine is indeed efficacious among females, the calculated value of efficacy must be greater than 50%. Otherwise, the vaccine will be deemed ineffective and will not be recommended for administration for this specific sub group.  
   
-The estimated efficacy of the vaccine among females is `r EfficacyFemales`%. The 95% confidence interval of the vaccine efficacy among females is from `r EfficacyFemalesLow` to `r EfficacyFemalesHigh`. Therefore, these results conclude that the vaccine is efficacious among females, so it's recommended that members of this population take the vaccine to prevent contracting covid-19.   
+The estimated efficacy of the vaccine among females is `r EfficacyFemales`%. The 95% confidence interval of the vaccine efficacy among females is from `r EfficacyFemalesLow`% to `r EfficacyFemalesHigh`%. Therefore, these results conclude that the vaccine is efficacious among females, so it's recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
 ## LGBTQ
 
@@ -211,7 +211,7 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
 The two plots above show the graphical summary of the relationship between the type of treatment (placebo and vaccine) and the contraction of covid-19 specifically among people who identify as LGBTQ.   
   
-The first bar plot shows the estimated counts of people who identify as LGBTQ who did and did not get covid-19 and whether they took the vaccine or the placebo. At first glance, it can be seen that the majority of the LGBTQ population did not contract covid-19 regardless of the type of treatment they received. However, looking closely, the bar representing LGBTQ members who took the placebo and contracted covid-19 is smaller compared to the bar representing LGBTQ members who took the vaccine and contracted covid-19. This may suggest that the vaccine is not working among the LGBTQ community given that there is more counts of infection among members who took the vaccine.  
+The first bar plot shows the estimated counts of people who identify as LGBTQ who did and did not get covid-19 and whether they took the vaccine or the placebo. At first glance, it can be seen that the majority of the LGBTQ population did not contract covid-19 regardless of the type of treatment they received. However, looking closely, the bar representing LGBTQ members who took the placebo and contracted covid-19 is smaller compared to the bar representing LGBTQ members who took the vaccine and contracted covid-19. This may suggest that the vaccine is not working among the LGBTQ community given that there are more counts of infection among members who took the vaccine.  
   
 Meanwhile, the second bar plot shows the estimated percentages of covid-19 infection among LGBTQ members who took the two types of treatment. Among people who identify as LGBTQ who contracted covid-19, only about 15% of them took the placebo, and about 85% got the vaccine. This means that infection among members of LBGTQ community is largely made up people who took the vaccine. Furthermore, among LGBTQ members who did not contract the virus, there appears to be a 50:50 ratio of LGBTQ people who took the placebo and got the vaccine.
 
@@ -244,7 +244,7 @@ To further test whether the vaccine is efficacious among LGBTQ members, chi-squa
 
 Before going into the results of this test, notice that the observed counts table shows the actual number of people who identify as LGBTQ who did and did not get covid. There are only 8 LGBTQ who took the placebo and got covid-19 while there are 58 LGBTQ who got the vaccine and got covid-19.
 
-The chi-squared test provided a small p-value of 0.001 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among LGBTQ people, or that there is a statistical difference in the effect of the placebo and the vaccine among LGBTQ people in preventing covid-19 infection. More importantly, according to the odds ratio provided in the fisher's exact test, people who identify as LGBTQ and took the vaccine are more likely to contract covid-19 than those who took the placebo. Specifically, there is only `r lgbtqfisher$estimate` LGBTQ member who got the placebo that tests positive for covid-19 for every 1 LGBTQ member who got the vaccine that tests positive for the virus. Therefore, the vaccine does not appear to be working for people who identify as LGBTQ.   
+The chi-squared test provided a small p-value of 0 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among LGBTQ people, or that there is a statistical difference in the effect of the placebo and the vaccine among LGBTQ people in preventing covid-19 infection. More importantly, according to the odds ratio provided in the fisher's exact test, people who identify as LGBTQ and took the vaccine are more likely to contract covid-19 than those who took the placebo. Specifically, there is only `r lgbtqfisher$estimate` LGBTQ member who got the placebo that tests positive for covid-19 for every 1 LGBTQ member who got the vaccine that tests positive for the virus. Therefore, the vaccine does not appear to be working for people who identify as LGBTQ.   
   
   
   
@@ -301,6 +301,14 @@ chisqtestGC(table4)
 drugfisher <- fisher.test(table4)
 drugfisher
 ```
+  
+To further test whether the vaccine is efficacious among drug users, chi-squares test is conducted along with fisher’s exact test.  
+  
+Before going into the results of this test, notice that the observed counts table shows the actual number of drug users who did and did not get covid. There are only 9 drug users who took the placebo and got covid-19 while there are 51 drug users who got the vaccine and got covid-19.  
+  
+The chi-squared test provided a small p-value of 0 which means that results expected by the null hypothesis are unlikely to happen by chance. This also implies there is a correlation between the type of treatment and contraction of covid-19 among drug users, or that there is a statistical difference in the effect of the placebo and the vaccine amongdrug users in preventing covid-19 infection. More importantly, according to the odds ratio provided in the fisher’s exact test, drug users who took the vaccine are more likely to contract covid-19 than those who took the placebo. Specifically, there is only 0.2 drug users who got the placebo that tests positive for covid-19 for every 1 drug user who got the vaccine that tests positive for the virus. Therefore, the vaccine does not appear to be working for drug users.
+
+
 
 ### Efficacy of Vaccine for Drug Users
   
