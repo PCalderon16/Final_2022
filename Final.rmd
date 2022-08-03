@@ -338,6 +338,14 @@ To be able to conclude that the vaccine is efficacious among drug users, the cal
   
 The estimated efficacy of the vaccine among drug users is `r EfficacyDrug`%. The 95% confidence interval of the vaccine efficacy among drug users is from `r EfficacyDrugLow`% to `r EfficacyDrugHigh`%. Therefore, these results conclude that the vaccine is inefficacious among drug users, so it is not recommended that members of this population take the vaccine to prevent contracting covid-19.   
 
-## Discussion and Conclusion
+# Discussion and Conclusion
 
-Note: paste values of efficacy of vaccine for each group. 
+The purpose of this report is to analyze the effects of the new preventative vaccine named covid91 among the test subjects. These test subjects are divided among four sub groups: males, females, LGBTQ, and drug users. According to the findings of this study, the vaccine is effective among males and females but is ineffective among people who identify as LGBTQ and drug users.   
+  
+This conclusion is determined by comparing the effects of the vaccine on the groups to the effects of a placebo and whether the vaccine was able to prevent infection among the test subjects of each group. Most especially, the efficacy of the vaccine is calculated for each sub group along with the 95% confidence interval.   
+  
+The results show that the efficacy of the vaccine among males is `r EfficacyMales`%, and the efficacy of the vaccine among females is `r EfficacyFemales`%. Since the efficacy of the vaccine is greater than 50% among males and females, it is deemed effective and is therefore recommended that people belonging to these sub groups get the vaccine to prevent the contraction of covid-19.
+
+Meanwhile, the results show that the efficacy of the vaccine among people who identify as LGBTQ is `r EfficacyLGBTQ`%, anf the efficacy of the vaccine among drug users is `r EfficacyDrug`%. Since the efficacy of the vaccine is less than 50% among people who identify as LGBTQ and drug users, it is deemed ineffective and is therefore not recommended for administration among people belonging to these sub groups.  
+  
+  
